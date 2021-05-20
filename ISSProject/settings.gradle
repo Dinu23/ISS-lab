@@ -1,0 +1,11 @@
+rootProject.name = 'ISS'
+include 'Persistance'
+include 'Domain'
+include 'Services'
+include 'Controllers'
+include 'Main()'
+include 'Main'
+include 'Server'
+include 'Services'
+include 'Client'
+

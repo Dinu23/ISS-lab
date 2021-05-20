@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="bugVersionControl.db" uuid="864ba6aa-45ff-42af-87fe-c88936ec4878">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\iss\ISS-lab\ISSProject\DB\bugVersionControl.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
