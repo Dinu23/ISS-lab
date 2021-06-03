@@ -46,7 +46,7 @@ public class LoginController  extends UnicastRemoteObject implements Serializabl
         String password = passwordField.getText();
         try {
             Employee employee = service.findEmployee(username, password);
-
+            employee.getWorkingBugs().forEach(x->{System.out.println(x.getID());});
             if(employee != null) {
                 if (employee instanceof Developer) {
                     DeveloperController developerController = new DeveloperController();

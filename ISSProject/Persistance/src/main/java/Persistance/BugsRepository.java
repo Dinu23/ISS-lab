@@ -49,7 +49,7 @@ public class BugsRepository {
             try {
                 tx = session.beginTransaction();
                 Set<Bug> bugs =
-                        session.createQuery("from Bug as b", Bug.class)
+                        session.createQuery("from Bug as b ", Bug.class)
                                 .stream().filter(x -> {
                             return x.getBugStatus() == bugStatus;
                         })
@@ -63,6 +63,24 @@ public class BugsRepository {
         }
         return null;
     }
+
+    public Bug updateBug(Bug updatedBug){
+        try(Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                session.update(updatedBug);
+                tx.commit();
+                return updatedBug;
+            } catch (RuntimeException ex) {
+                if (tx != null)
+                    tx.rollback();
+            }
+        }
+        return null;
+
+    }
+
 
     void initialize() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()

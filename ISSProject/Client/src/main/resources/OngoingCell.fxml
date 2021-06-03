@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <graphic>
+
+        <HBox >
+            <children>
+                <VBox>
+                    <children>
+                        <Label fx:id="bugNameLabel" />
+                        <Label fx:id="bugImportanceLabel"/>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Button fx:id="bugDetailsButton" text="Details"/>
+                        <Button fx:id="bugSendButton" text="Send"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+    </graphic>
+</fx:root>

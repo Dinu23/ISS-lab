@@ -44,6 +44,23 @@ public class EmployeeRepository {
         }
         return null;
     }
+
+    public Employee updateEmployee(Employee updatedEmployee){
+        try(Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                session.update(updatedEmployee);
+                tx.commit();
+                return updatedEmployee;
+            } catch (RuntimeException ex) {
+                if (tx != null)
+                    tx.rollback();
+            }
+        }
+        return null;
+    }
+
     void initialize() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml

@@ -22,20 +22,20 @@ public class BugVersion extends Entity  implements Serializable {
         Description = description;
     }
 
-    private Integer getVersion() {
+    public Integer getVersion() {
         return Version;
     }
 
-    private String getDescription() {
+    public String getDescription() {
         return Description;
     }
 
 
-    private void setVersion(Integer Version) {
+    public void setVersion(Integer Version) {
         this.Version = Version;
     }
 
-    private void setDescription(String Description) {
+    public void setDescription(String Description) {
         this.Description = Description;
     }
 

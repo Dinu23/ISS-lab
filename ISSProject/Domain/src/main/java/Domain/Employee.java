@@ -6,6 +6,7 @@ package Domain;/*
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @javax.persistence.Entity(name ="Employee")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -14,6 +15,12 @@ public class Employee extends Entity implements Serializable {
     private String username;
     private String password;
     private String name;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    private Set<Bug> workingBugs;
 
     public Employee(String username, String password, String name) {
         this.username = username;
@@ -49,4 +56,16 @@ public class Employee extends Entity implements Serializable {
         this.name = name;
     }
 
+    public Set<Bug> getWorkingBugs() {
+        return workingBugs;
+    }
+    public void addBug(Bug bug){
+        workingBugs.add(bug);
+    }
+
+    public void removeBug(Bug bug){
+        workingBugs.removeIf(x->{
+            return  x.getID().equals(bug.getID());
+        });
+    }
 }

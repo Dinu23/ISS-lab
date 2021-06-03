@@ -15,5 +15,6 @@ public enum BugStatus  implements Serializable {
     NEW,
     UN_RESOLVED,
     ON_GOING,
-    ON_TESTING;
+    ON_TESTING,
+    FINISHED
 }

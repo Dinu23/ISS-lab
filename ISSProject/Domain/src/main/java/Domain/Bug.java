@@ -21,8 +21,10 @@ public class Bug extends Entity {
     private String description;
 
     @OneToMany(
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             orphanRemoval = true
+
             )
     private Set<BugVersion> bugVersions = new HashSet<BugVersion>();
 
